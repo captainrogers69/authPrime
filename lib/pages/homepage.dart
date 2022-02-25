@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:auth_prime/services/auth_service.dart';
 import 'package:auth_prime/services/local_db_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:auth_prime/dummy_data/dummy_data.dart';
 
 class HomePage extends HookConsumerWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,6 +15,7 @@ class HomePage extends HookConsumerWidget {
     final authServiceProvider = ref.read(authenticationServiceProvider);
     final userName = useState("");
     final greetMessage = useState("Good Morning");
+    // final Map<String, dynamic> medicineData = jsonDecode(data);
 
     getUserName() async {
       final data = await ref.read(localDBProvider).getUserName();
@@ -72,6 +76,13 @@ class HomePage extends HookConsumerWidget {
               style:
                   TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             ),
+            // medicineData["problems"].map((problem) {
+            //   final medicineName = problem["medications"][0][""];
+            //   return Text(
+            //   "Medicine Dose: ",
+            //   style:
+            //       TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            // );}).toList(),
           ],
         ),
       ),
