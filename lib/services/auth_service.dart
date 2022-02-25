@@ -40,8 +40,6 @@ class AuthenticationService implements BaseAuthenticationService {
           Navigator.of(context).pop();
 
           await _read(firebaseAuthProvider).signInWithCredential(credential);
-
-          // User user = result.user!;
         },
         verificationFailed: (FirebaseAuthException exception) {
           Fluttertoast.showToast(
@@ -60,7 +58,6 @@ class AuthenticationService implements BaseAuthenticationService {
                   phoneNumber: phone,
                 );
               });
-//////////////////////////
         },
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
@@ -145,8 +142,6 @@ class OtpDialogue extends HookConsumerWidget {
               Navigator.pop(context);
               Fluttertoast.showToast(msg: "Some Error Occurred");
             });
-
-            // User user = result.user!;
           },
         )
       ],
