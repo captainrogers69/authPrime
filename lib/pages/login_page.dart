@@ -150,7 +150,7 @@ class LoginPage extends HookConsumerWidget {
                                 .signInWithPhone(phone, context);
                           } else {
                             Fluttertoast.showToast(
-                                msg: "Fields can not be empty");
+                                msg: "Fields can't be empty");
                           }
                         },
                       ),
