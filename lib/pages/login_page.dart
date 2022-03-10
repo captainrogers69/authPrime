@@ -88,7 +88,7 @@ class LoginPage extends HookConsumerWidget {
                             ),
                             RoundedTextField(
                               controller: _phoneNumber,
-                              hintText: 'Enter your Phone Number',
+                              hintText: 'Enter your Mobile Number',
                               secureIt: false,
                               icon: Icon(
                                 Icons.phone,
